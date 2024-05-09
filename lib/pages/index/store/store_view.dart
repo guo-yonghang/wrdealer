@@ -9,7 +9,7 @@ class StoreView extends GetView<StoreController> {
   // 顶部收入组件
   Widget IncomeWidget() {
     return Container(
-      margin: EdgeInsets.only(left: Rpx.w(25), top: Rpx.h(10)),
+      margin: EdgeInsets.only(top: Rpx.h(10)),
       width: Rpx.w(700),
       height: Rpx.w(324),
       color: Get.theme.primaryColor,
@@ -135,16 +135,14 @@ class StoreView extends GetView<StoreController> {
   }
 
   // 待办数量
-  Widget TodoWidget() {
+  Widget WaitNumWidget() {
     return Container(
-      margin: EdgeInsets.only(left: Rpx.w(25), top: Rpx.h(40)),
+      margin: EdgeInsets.only(top: Rpx.h(40)),
+      padding: EdgeInsets.symmetric(vertical: Rpx.w(10)),
       width: Rpx.w(700),
-      height: Rpx.h(128),
-      //阴影
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
-          //卡片阴影
           BoxShadow(
             color: Colors.grey.withOpacity(0.16),
             spreadRadius: Rpx.w(5),
@@ -163,7 +161,6 @@ class StoreView extends GetView<StoreController> {
                 '12',
                 style: TextStyle(fontSize: Rpx.sp(36)),
               ),
-              SizedBox(height: Rpx.h(10)),
               Text(
                 '待报价',
                 style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
@@ -185,7 +182,6 @@ class StoreView extends GetView<StoreController> {
                 '12',
                 style: TextStyle(fontSize: Rpx.sp(36)),
               ),
-              SizedBox(height: Rpx.h(10)),
               Text(
                 '待发货',
                 style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
@@ -207,7 +203,6 @@ class StoreView extends GetView<StoreController> {
                 '3',
                 style: TextStyle(fontSize: Rpx.sp(36)),
               ),
-              SizedBox(height: Rpx.h(10)),
               Text(
                 '待回复',
                 style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
@@ -221,32 +216,80 @@ class StoreView extends GetView<StoreController> {
 
   // 工作台
   Widget WorkbenchWidget() {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.only(left: Rpx.w(0), top: Rpx.h(40)),
+      width: Rpx.w(750),
+      height: Rpx.w(345),
       child: GridView.builder(
         itemCount: 8,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
-          mainAxisSpacing: Rpx.w(20),
-          crossAxisSpacing: Rpx.h(20),
+          crossAxisSpacing: Rpx.w(20),
         ),
         itemBuilder: (context, i) {
           return InkWell(
-              child: Column(
-            children: [
-              Icon(
-                Icons.account_balance_wallet,
-                size: Rpx.sp(60),
-              ),
-              SizedBox(height: Rpx.h(10)),
-              Text(
-                '我的钱包',
-                style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
-              ),
-            ],
-          ));
+            onTap: () {
+              print('点击了第$i个');
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.settings_applications_outlined,
+                  size: Rpx.sp(120),
+                ),
+                // SizedBox(height: Rpx.h(10)),
+                Text(
+                  '工作台',
+                  style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
+                ),
+              ],
+            ),
+          );
         },
       ),
     );
+  }
+
+  // 待办事项
+  Widget TodoListWidget() {
+    return Container(
+        margin: EdgeInsets.only(top: Rpx.h(40)),
+        padding: EdgeInsets.symmetric(vertical: Rpx.w(10)),
+        width: Rpx.w(700),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  '待办事项',
+                  style: TextStyle(
+                    fontSize: Rpx.sp(30),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    '查看全部',
+                    style: TextStyle(fontSize: Rpx.sp(24), color: Colors.blue),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: Rpx.h(20)),
+            const Column(
+              children: [
+                Text("一条"),
+                Text("一条"),
+                Text("一条"),
+              ],
+            ),
+          ],
+        ));
   }
 
   @override
@@ -285,7 +328,9 @@ class StoreView extends GetView<StoreController> {
         child: Column(
           children: [
             IncomeWidget(),
-            TodoWidget(),
+            WaitNumWidget(),
+            WorkbenchWidget(),
+            TodoListWidget(),
           ],
         ),
       ),
