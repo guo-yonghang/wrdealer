@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:wrdealer/service/rpx.dart';
 import 'routes/app_pages.dart';
-import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -23,13 +21,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late TDThemeData _themeData;
-  @override
-  void initState() {
-    super.initState();
-    _themeData = TDThemeData.defaultData();
-  }
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -41,9 +32,8 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: "玖品商家",
           theme: ThemeData(
-            extensions: [_themeData],
-            colorScheme: ColorScheme.light(primary: _themeData.brandColor6),
-            primaryColor: _themeData.brandColor6,
+            primaryColor: const Color(0xff366ef4),
+            colorScheme: const ColorScheme.light(primary: Color(0xff366ef4)),
           ),
           defaultTransition: Transition.rightToLeft,
           initialRoute: AppPages.INITIAL,

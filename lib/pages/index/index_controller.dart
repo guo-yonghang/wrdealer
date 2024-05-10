@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import './store/store_view.dart';
-import './chart/chart_view.dart';
-// import './order/order_view.dart';
+import './news/news_view.dart';
 import './chat/chat_view.dart';
 import './admin/admin_view.dart';
 
@@ -11,8 +10,7 @@ class IndexController extends GetxController {
   PageController pageController = PageController(initialPage: 0);
   final List<Widget> tabbars = [
     const StoreView(),
-    const ChartView(),
-    // const OrderView(),
+    const NewsView(),
     const ChatView(),
     const AdminView(),
   ];

@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 class IndexController extends GetxController {
-  final RxInt index = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -15,10 +14,5 @@ class IndexController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-  }
-
-  void setCurrentIndex(int value) {
-    index.value = value;
-    update();
   }
 }

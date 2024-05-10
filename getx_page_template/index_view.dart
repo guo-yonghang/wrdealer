@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import './index_controller.dart';
 
 class IndexView extends GetView<IndexController> {
-  const IndexView({Key? key}) : super(key: key);
+  const IndexView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
