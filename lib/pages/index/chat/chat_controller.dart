@@ -1,7 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../store/chat.dart';
 
 class ChatController extends GetxController {
   final RxInt index = 0.obs;
+
+  final ChatStoreController chatStoreController = Get.find();
+  ScrollController scrollController = ScrollController();
   @override
   void onInit() {
     super.onInit();
@@ -17,8 +22,8 @@ class ChatController extends GetxController {
     super.onClose();
   }
 
-  void setCurrentIndex(int value) {
-    index.value = value;
-    update();
+  Future<void> getChatList(bool reload) async {
+    await Future.delayed(const Duration(seconds: 1));
+    return;
   }
 }

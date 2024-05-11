@@ -10,7 +10,7 @@ class Storage {
   static getData(String key) async {
     var prefs = await SharedPreferences.getInstance();
     String? data = prefs.getString(key);
-    return json.decode(data!);
+    return data == null ? data : json.decode(data);
   }
 
   static removeData(String key) async {

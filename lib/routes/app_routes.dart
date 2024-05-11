@@ -8,4 +8,5 @@ abstract class Routes {
 abstract class _Paths {
   _Paths._();
   static const Index = '/';
+  static const Login = '/login';
 }
