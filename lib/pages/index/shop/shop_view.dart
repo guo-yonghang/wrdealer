@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wrdealer/service/keepAliveWrapper.dart';
 import 'package:wrdealer/service/rpx.dart';
-import './store_controller.dart';
+import 'shop_controller.dart';
 
-class StoreView extends GetView<StoreController> {
-  const StoreView({super.key});
+class ShopView extends GetView<ShopController> {
+  const ShopView({super.key});
 
   // 顶部收入组件
   Widget IncomeWidget() {

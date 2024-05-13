@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wrdealer/service/storage.dart';
 import '../../store/user.dart';
-import './store/store_view.dart';
+import './shop/shop_view.dart';
 import './news/news_view.dart';
 import './chat/chat_view.dart';
 import './admin/admin_view.dart';
@@ -11,7 +11,7 @@ class IndexController extends GetxController {
   final RxInt tabIndex = 2.obs;
   PageController pageController = PageController(initialPage: 2);
   final List<Widget> tabbars = [
-    const StoreView(),
+    const ShopView(),
     const NewsView(),
     const ChatView(),
     const AdminView(),

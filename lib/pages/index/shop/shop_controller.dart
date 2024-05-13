@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class StoreController extends GetxController {
+class ShopController extends GetxController {
   final RxInt index = 0.obs;
   final List workList = [
     {
