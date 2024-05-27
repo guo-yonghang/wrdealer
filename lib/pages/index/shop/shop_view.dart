@@ -1,344 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wrdealer/service/keepAliveWrapper.dart';
-import 'package:wrdealer/service/rpx.dart';
+import 'package:bruno/bruno.dart';
 import 'shop_controller.dart';
+import '../../../service/keepAliveWrapper.dart';
 
 class ShopView extends GetView<ShopController> {
   const ShopView({super.key});
-
-  // 顶部收入组件
-  Widget IncomeWidget() {
-    return Container(
-      margin: EdgeInsets.only(top: Rpx.h(10)),
-      width: Rpx.w(700),
-      height: Rpx.w(324),
-      color: Get.theme.primaryColor,
-      child: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Padding(
-              padding: EdgeInsets.only(left: Rpx.w(40), top: Rpx.h(40)),
-              child: Column(
-                //左对齐
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "今日收入(元)",
-                    style: TextStyle(color: Colors.white, fontSize: Rpx.sp(26)),
-                  ),
-                  SizedBox(height: Rpx.h(10)),
-                  Text(
-                    '26587.6',
-                    style: TextStyle(color: Colors.white, fontSize: Rpx.sp(56)),
-                  ),
-                  SizedBox(height: Rpx.h(30)),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: Rpx.w(220),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '今日接单',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: Rpx.sp(24)),
-                            ),
-                            SizedBox(height: Rpx.h(8)),
-                            Text(
-                              '26587.6',
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: Rpx.sp(34)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: Rpx.w(220),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '昨日新增客户',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: Rpx.sp(24)),
-                            ),
-                            SizedBox(height: Rpx.h(8)),
-                            Text(
-                              '81',
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: Rpx.sp(34)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: Rpx.w(220),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '7日订单量',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: Rpx.sp(24)),
-                            ),
-                            SizedBox(height: Rpx.h(8)),
-                            Text(
-                              '77',
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: Rpx.sp(34)),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            top: Rpx.h(40),
-            right: 0,
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                  vertical: Rpx.h(5), horizontal: Rpx.w(20)),
-              decoration: BoxDecoration(
-                color: Colors.white30,
-                borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(Rpx.w(30)),
-                ),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.account_balance_wallet,
-                    color: Colors.white,
-                    size: Rpx.sp(30),
-                  ),
-                  SizedBox(width: Rpx.w(10)),
-                  Text(
-                    '我的钱包',
-                    style: TextStyle(color: Colors.white, fontSize: Rpx.sp(26)),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // 待办数量
-  Widget WaitNumWidget() {
-    return Container(
-      margin: EdgeInsets.only(top: Rpx.h(40)),
-      padding: EdgeInsets.symmetric(vertical: Rpx.w(10)),
-      width: Rpx.w(700),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.16),
-            spreadRadius: Rpx.w(5),
-            blurRadius: Rpx.w(5),
-            offset: Offset(0, Rpx.w(5)),
-          ),
-        ],
-      ),
-      child: Flex(direction: Axis.horizontal, children: [
-        Expanded(
-          flex: 1,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '12',
-                style: TextStyle(fontSize: Rpx.sp(36)),
-              ),
-              Text(
-                '待报价',
-                style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          width: Rpx.w(1),
-          height: Rpx.h(80),
-          color: Colors.black12,
-        ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '12',
-                style: TextStyle(fontSize: Rpx.sp(36)),
-              ),
-              Text(
-                '待发货',
-                style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          width: Rpx.w(1),
-          height: Rpx.h(80),
-          color: Colors.black12,
-        ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '7',
-                style: TextStyle(fontSize: Rpx.sp(36)),
-              ),
-              Text(
-                '待付款',
-                style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          width: Rpx.w(1),
-          height: Rpx.h(80),
-          color: Colors.black12,
-        ),
-        Expanded(
-          flex: 1,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '3',
-                style: TextStyle(fontSize: Rpx.sp(36)),
-              ),
-              Text(
-                '待回复',
-                style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
-              ),
-            ],
-          ),
-        ),
-      ]),
-    );
-  }
-
-  // 工作台
-  Widget WorkbenchWidget() {
-    return Container(
-      margin: EdgeInsets.only(left: Rpx.w(0), top: Rpx.h(40)),
-      width: Rpx.w(750),
-      height: Rpx.w(345),
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: controller.workList.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          crossAxisSpacing: Rpx.w(20),
-        ),
-        itemBuilder: (context, i) {
-          int count = controller.workList[i]['count'];
-          bool isLabelVisible = count > 0;
-          String name = controller.workList[i]['name'];
-          return InkWell(
-            onTap: () {
-              print('点击了第$i个');
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Badge.count(
-                  count: count,
-                  isLabelVisible: isLabelVisible,
-                  offset: Offset(Rpx.w(-10), Rpx.h(5)),
-                  child: Icon(
-                    Icons.settings_applications_outlined,
-                    size: Rpx.sp(120),
-                    color: Get.theme.primaryColor,
-                  ),
-                ),
-                Text(
-                  name,
-                  style: TextStyle(fontSize: Rpx.sp(24), color: Colors.black87),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
-
-  // 待办事项
-  Widget TodoListWidget() {
-    return Container(
-        margin: EdgeInsets.only(top: Rpx.h(10)),
-        padding: EdgeInsets.symmetric(vertical: Rpx.w(10)),
-        width: Rpx.w(700),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              onTap: () {},
-              leading: Text(
-                "待办事项(30)",
-                style: TextStyle(
-                  fontSize: Rpx.sp(30),
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              trailing: SizedBox(
-                width: Rpx.w(200),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      '查看全部',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: Rpx.sp(26),
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: Rpx.sp(30),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: Rpx.h(20)),
-            Column(
-              children: [
-                const OrderCard(),
-                SizedBox(height: Rpx.h(30)),
-                const BusinessCard(),
-                SizedBox(height: Rpx.h(30)),
-                const BusinessCard(),
-                SizedBox(height: Rpx.h(30)),
-                const BusinessCard(),
-                SizedBox(height: Rpx.h(30)),
-                const BusinessCard(),
-                SizedBox(height: Rpx.h(30)),
-              ],
-            ),
-          ],
-        ));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -347,7 +14,6 @@ class ShopView extends GetView<ShopController> {
         appBar: AppBar(
           title: Row(
             children: [
-              //头像宽高30并且使用网络图片
               SizedBox(
                 width: 36,
                 child: ClipOval(
@@ -374,281 +40,262 @@ class ShopView extends GetView<ShopController> {
         ),
         body: ListView(
           children: [
+            // shopEnterWidget(),
             Column(
               children: [
                 IncomeWidget(),
-                // WaitNumWidget(),
-                WorkbenchWidget(),
-                TodoListWidget(),
               ],
-            ),
+            )
           ],
         ),
       ),
     );
   }
-}
 
-//商机单卡片组件
-class BusinessCard extends StatelessWidget {
-  const BusinessCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
+  //数据卡片
+  Widget IncomeWidget() {
     return Container(
-      padding: EdgeInsets.symmetric(
-        vertical: Rpx.h(20),
-        horizontal: Rpx.w(20),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.16),
-            spreadRadius: Rpx.w(5),
-            blurRadius: Rpx.w(5),
-            offset: Offset(0, Rpx.w(5)),
-          ),
-        ],
-      ),
-      child: Column(
+      margin: const EdgeInsets.only(top: 10),
+      width: 375,
+      height: 150,
+      color: Get.theme.primaryColor,
+      child: Stack(
         children: [
-          ListTile(
-            title: Text(
-              '青花瓷定制高端餐具1000套+精致密胺餐具1000套 JP_992256',
-              style:
-                  TextStyle(fontSize: Rpx.sp(30), fontWeight: FontWeight.w500),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '询货总数：30',
-                  style: TextStyle(fontSize: Rpx.sp(26), color: Colors.black87),
-                ),
-                Text(
-                  '发布时间：2021-09-25 13:35:25',
-                  style: TextStyle(fontSize: Rpx.sp(26), color: Colors.black87),
-                ),
-              ],
+          const Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Padding(
+              padding: EdgeInsets.only(left: 15, top: 15),
+              child: Column(
+                //左对齐
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "今日收入(元)",
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    '26587.6',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                  SizedBox(height: 12),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 120,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '今日接单',
+                              style: TextStyle(
+                                  color: Colors.white70, fontSize: 14),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              '26587.6',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 120,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '昨日新增客户',
+                              style: TextStyle(
+                                  color: Colors.white70, fontSize: 14),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              '81',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 120,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '7日订单量',
+                              style: TextStyle(
+                                  color: Colors.white70, fontSize: 14),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              '77',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FilledButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  //设置宽高
-                  minimumSize: WidgetStateProperty.all(
-                    Size(Rpx.w(150), Rpx.h(75)),
-                  ),
-                  shape: WidgetStateProperty.all(
-                    const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero,
-                    ),
-                  ),
+          Positioned(
+            top: 15,
+            right: 0,
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 7),
+              decoration: const BoxDecoration(
+                color: Colors.white30,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(30),
                 ),
-                child: Text(
-                  '报价',
-                  style: TextStyle(
-                    fontSize: Rpx.sp(26),
+              ),
+              child: const Row(
+                children: [
+                  Icon(
+                    Icons.account_balance_wallet,
                     color: Colors.white,
+                    size: 15,
                   ),
-                ),
-              )
-            ],
-          )
+                  SizedBox(width: 4),
+                  Text('我的钱包',
+                      style: TextStyle(color: Colors.white, fontSize: 13)),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
-}
 
-//订单卡片组件包含发货按钮
-class OrderCard extends StatelessWidget {
-  const OrderCard({super.key});
+  //商户入驻组件
+  Widget shopEnterWidget() {
+    return Column(
+      children: [
+        infoStepWidget(),
+        acctStepWidget(),
+      ],
+    );
+  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        vertical: Rpx.h(20),
-        horizontal: Rpx.w(20),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.16),
-            spreadRadius: Rpx.w(5),
-            blurRadius: Rpx.w(5),
-            offset: Offset(0, Rpx.w(5)),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.only(bottom: Rpx.h(20)),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey.withOpacity(0.2),
-                  width: Rpx.w(1),
-                ),
-              ),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Text(
-                    '北京智者天下科技有限公司',
-                    style: TextStyle(
-                      fontSize: Rpx.sp(26),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ),
-                Text(
-                  '待发货',
-                  style: TextStyle(
-                    fontSize: Rpx.sp(26),
-                    color: Get.theme.primaryColor,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            leading: AspectRatio(
-              aspectRatio: 1 / 1,
-              child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      'https://jpf.jpwanrun.com/upload/file/2023-09-25/7bczzgtyzw.jpg',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            title: Text(
-              '新人专享·高端瓷器佳能相机套装 米饭面碗盘子套装',
-              style:
-                  TextStyle(fontSize: Rpx.sp(30), fontWeight: FontWeight.w500),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '7英寸黑色',
-                  style: TextStyle(fontSize: Rpx.sp(26), color: Colors.black54),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+  //完善资料步骤条
+  Widget infoStepWidget() {
+    return Column(
+      children: [
+        const BrnCommonCardTitle(
+          title: '完善资料',
+          padding: EdgeInsets.only(left: 20, top: 20),
+        ),
+        ListView.builder(
+          padding: const EdgeInsets.only(top: 20, left: 20),
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: controller.infoStepList.length,
+          itemBuilder: (context, index) {
+            return BrnStepLine(
+              lineWidth: 2,
+              isGrey: index != 0,
+              lineColor: const Color(0xffeeeeee),
+              contentWidget: Container(
+                padding: const EdgeInsets.only(left: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
                     Text(
-                      '￥30',
-                      style: TextStyle(
-                          fontSize: Rpx.sp(26), color: Colors.red[600]),
+                      controller.infoStepList[index]['name'],
+                      style: const TextStyle(
+                        color: Colors.black87,
+                        fontSize: 16,
+                      ),
                     ),
-                    Text(
-                      'X10',
-                      style: TextStyle(
-                          fontSize: Rpx.sp(26), color: Colors.black54),
-                    ),
+                    controller.infoStepList.length - 1 == index
+                        ? const SizedBox()
+                        : Padding(
+                            padding: const EdgeInsets.only(top: 20, bottom: 20),
+                            child: BrnSmallMainButton(
+                              title: controller.infoStepList[index]['btnText'],
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              onTap: () {
+                                BrnToast.show(
+                                    controller.infoStepList[index]['name'],
+                                    context);
+                              },
+                            ),
+                          )
                   ],
-                )
-              ],
-            ),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            leading: AspectRatio(
-              aspectRatio: 1 / 1,
-              child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      'https://jpf.jpwanrun.com/upload/file/2023-09-25/7bczzgtyzw.jpg',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
                 ),
               ),
-            ),
-            title: Text(
-              '新人专享·高端瓷器佳能相机套装 米饭面碗盘子套装',
-              style:
-                  TextStyle(fontSize: Rpx.sp(30), fontWeight: FontWeight.w500),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '7英寸黑色',
-                  style: TextStyle(fontSize: Rpx.sp(26), color: Colors.black54),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  //账薄开户步骤条
+  Widget acctStepWidget() {
+    return Column(
+      children: [
+        const BrnCommonCardTitle(
+          title: '账薄开户',
+          padding: EdgeInsets.only(left: 20, top: 20),
+        ),
+        ListView.builder(
+          padding: const EdgeInsets.only(top: 20, left: 20),
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: controller.acctStepList.length,
+          itemBuilder: (context, index) {
+            return BrnStepLine(
+              lineWidth: 1,
+              //非第一个是灰色
+              isGrey: index != 0,
+              //最后一个的线条为透明色 做到不显示的效果
+              lineColor: const Color(0xffeeeeee),
+              contentWidget: Container(
+                padding: const EdgeInsets.only(left: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
                     Text(
-                      '￥30',
-                      style: TextStyle(
-                          fontSize: Rpx.sp(26), color: Colors.red[600]),
+                      controller.acctStepList[index]['name'],
+                      style: const TextStyle(
+                        color: Colors.black87,
+                        fontSize: 16,
+                      ),
                     ),
-                    Text(
-                      'X10',
-                      style: TextStyle(
-                          fontSize: Rpx.sp(26), color: Colors.black54),
-                    ),
+                    controller.acctStepList.length - 1 == index
+                        ? const SizedBox()
+                        : Padding(
+                            padding: const EdgeInsets.only(top: 20, bottom: 20),
+                            child: BrnSmallMainButton(
+                              title: controller.acctStepList[index]['btnText'],
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              onTap: () {
+                                BrnToast.show(
+                                    controller.acctStepList[index]['name'],
+                                    context);
+                              },
+                            ),
+                          )
                   ],
-                )
-              ],
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("总金额", style: TextStyle(fontSize: Rpx.sp(30))),
-              Text("￥600",
-                  style:
-                      TextStyle(fontSize: Rpx.sp(30), color: Colors.red[600])),
-            ],
-          ),
-          SizedBox(height: Rpx.h(20)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FilledButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  //设置宽高
-                  minimumSize: WidgetStateProperty.all(
-                    Size(Rpx.w(150), Rpx.h(75)),
-                  ),
-                  shape: WidgetStateProperty.all(
-                    const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero,
-                    ),
-                  ),
                 ),
-                child: Text(
-                  '发货',
-                  style: TextStyle(
-                    fontSize: Rpx.sp(26),
-                    color: Colors.white,
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 }

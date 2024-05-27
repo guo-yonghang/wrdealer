@@ -1,11 +1,11 @@
 {
-    "name": "wrdealer",
-    "short_name": "wrdealer",
+    "name": "wjpdealer",
+    "short_name": "wjpdealer",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "wanrun dealer",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
