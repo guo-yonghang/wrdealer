@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:bruno/bruno.dart';
 import 'shop_controller.dart';
 import '../../../service/keepAliveWrapper.dart';
+import '../../../common/staticData.dart';
 
 class ShopView extends GetView<ShopController> {
   const ShopView({super.key});
@@ -40,10 +41,14 @@ class ShopView extends GetView<ShopController> {
         ),
         body: ListView(
           children: [
-            // shopEnterWidget(),
+            // ShopEnterWidget(),
             Column(
               children: [
                 IncomeWidget(),
+                Container(height: 10, color: const Color(0xfff8f8fb)),
+                GridUtilWidget(),
+                Container(height: 10, color: const Color(0xfff8f8fb)),
+                TodosWidget(context),
               ],
             )
           ],
@@ -55,8 +60,8 @@ class ShopView extends GetView<ShopController> {
   //数据卡片
   Widget IncomeWidget() {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
-      width: 375,
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
+      width: 360,
       height: 150,
       color: Get.theme.primaryColor,
       child: Stack(
@@ -85,7 +90,7 @@ class ShopView extends GetView<ShopController> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 120,
+                        width: 115,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -104,7 +109,7 @@ class ShopView extends GetView<ShopController> {
                         ),
                       ),
                       SizedBox(
-                        width: 120,
+                        width: 115,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -123,7 +128,7 @@ class ShopView extends GetView<ShopController> {
                         ),
                       ),
                       SizedBox(
-                        width: 120,
+                        width: 115,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -177,18 +182,103 @@ class ShopView extends GetView<ShopController> {
     );
   }
 
-  //商户入驻组件
-  Widget shopEnterWidget() {
+  //常用工具
+  Widget GridUtilWidget() {
+    return SizedBox(
+      width: 360,
+      height: 360 / 2,
+      child: GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: StaticData.indexGrids.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            crossAxisSpacing: 0,
+            mainAxisSpacing: 0,
+          ),
+          itemBuilder: (context, i) {
+            return SizedBox(
+              width: 125,
+              height: 80,
+              child: InkWell(
+                onTap: () {},
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 45,
+                      height: 45,
+                      child: Image.network(
+                        StaticData.indexGrids[i]['img'],
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                    Text(
+                      StaticData.indexGrids[i]['name'],
+                      style: const TextStyle(fontSize: 13),
+                    )
+                  ],
+                ),
+              ),
+            );
+          }),
+    );
+  }
+
+  //待办事项
+  Widget TodosWidget(context) {
+    return SizedBox(
+      width: 360,
+      child: Column(
+        children: [
+          BrnActionCardTitle(
+            title: '待办事项',
+            subTitle: '10',
+            accessoryText: '查看更多',
+            themeData: BrnCardTitleConfig(
+              accessoryTextStyle: BrnTextStyle(fontSize: 12),
+            ),
+            onTap: () {
+              BrnToast.show('BrnActionCardTitle is clicked', context);
+            },
+          ),
+          BusiCardWdiget(context),
+        ],
+      ),
+    );
+  }
+
+  //商机单卡片
+  Widget BusiCardWdiget(context) {
     return Column(
       children: [
-        infoStepWidget(),
-        acctStepWidget(),
+        BrnButtonPanel(
+          horizontalPadding: 0,
+          mainButtonName: '主按钮',
+          mainButtonOnTap: () {
+            BrnToast.show('主按钮点击', context);
+          },
+          secondaryButtonNameList: const ['次按钮1', '次按钮2'],
+          secondaryButtonOnTap: (index) {
+            BrnToast.show('第$index个次按钮点击了', context);
+          },
+        ),
+      ],
+    );
+  }
+
+  //商户入驻组件
+  Widget ShopEnterWidget() {
+    return Column(
+      children: [
+        InfoStepWidget(),
+        AcctStepWidget(),
       ],
     );
   }
 
   //完善资料步骤条
-  Widget infoStepWidget() {
+  Widget InfoStepWidget() {
     return Column(
       children: [
         const BrnCommonCardTitle(
@@ -243,7 +333,7 @@ class ShopView extends GetView<ShopController> {
   }
 
   //账薄开户步骤条
-  Widget acctStepWidget() {
+  Widget AcctStepWidget() {
     return Column(
       children: [
         const BrnCommonCardTitle(

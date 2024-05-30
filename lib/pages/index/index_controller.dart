@@ -4,7 +4,7 @@ import './shop/shop_view.dart';
 import './news/news_view.dart';
 import './chat/chat_view.dart';
 import './admin/admin_view.dart';
-import '../../service/storage.dart';
+// import '../../service/storage.dart';
 
 class IndexController extends GetxController {
   final RxInt tabIndex = 0.obs;
@@ -29,16 +29,6 @@ class IndexController extends GetxController {
     // if (value != null) {
     //   userStoreController.setUser(value);
     // }
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 
   void setIndex(int idx) {
