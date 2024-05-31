@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bruno/bruno.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'shop_controller.dart';
 import '../../../service/keepAliveWrapper.dart';
-import '../../../common/staticData.dart';
 
 class ShopView extends GetView<ShopController> {
   const ShopView({super.key});
@@ -62,88 +63,97 @@ class ShopView extends GetView<ShopController> {
     return Container(
       margin: const EdgeInsets.only(top: 10, bottom: 10),
       width: 360,
-      height: 150,
+      height: 180,
       color: Get.theme.primaryColor,
       child: Stack(
         children: [
-          const Positioned(
+          Positioned(
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
             child: Padding(
-              padding: EdgeInsets.only(left: 15, top: 15),
+              padding: const EdgeInsets.only(left: 15, top: 15),
               child: Column(
                 //左对齐
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "今日收入(元)",
                     style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     '26587.6',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: 30),
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   Row(
                     children: [
-                      SizedBox(
-                        width: 115,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '今日接单',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: 14),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              '26587.6',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        child: const SizedBox(
+                          width: 115,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '今日接单',
+                                style: TextStyle(
+                                    color: Colors.white70, fontSize: 14),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                '20',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      SizedBox(
-                        width: 115,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '昨日新增客户',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: 14),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              '81',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        child: const SizedBox(
+                          width: 115,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '昨日新增客户',
+                                style: TextStyle(
+                                    color: Colors.white70, fontSize: 14),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                '81',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      SizedBox(
-                        width: 115,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '7日订单量',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: 14),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              '77',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: () {},
+                        child: const SizedBox(
+                          width: 115,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '7日订单量',
+                                style: TextStyle(
+                                    color: Colors.white70, fontSize: 14),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                '77',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -155,25 +165,27 @@ class ShopView extends GetView<ShopController> {
           Positioned(
             top: 15,
             right: 0,
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 7),
-              decoration: const BoxDecoration(
-                color: Colors.white30,
-                borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(30),
-                ),
-              ),
-              child: const Row(
-                children: [
-                  Icon(
-                    Icons.account_balance_wallet,
-                    color: Colors.white,
-                    size: 15,
+            child: InkWell(
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 7),
+                decoration: const BoxDecoration(
+                  color: Colors.white30,
+                  borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(30),
                   ),
-                  SizedBox(width: 4),
-                  Text('我的钱包',
-                      style: TextStyle(color: Colors.white, fontSize: 13)),
-                ],
+                ),
+                child: const Row(
+                  children: [
+                    Icon(
+                      Icons.account_balance_wallet,
+                      color: Colors.white,
+                      size: 16,
+                    ),
+                    SizedBox(width: 4),
+                    Text('我的钱包',
+                        style: TextStyle(color: Colors.white, fontSize: 14)),
+                  ],
+                ),
               ),
             ),
           ),
@@ -189,36 +201,36 @@ class ShopView extends GetView<ShopController> {
       height: 360 / 2,
       child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: StaticData.indexGrids.length,
+          itemCount: controller.indexGrids.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
             crossAxisSpacing: 0,
             mainAxisSpacing: 0,
           ),
           itemBuilder: (context, i) {
-            return SizedBox(
-              width: 125,
-              height: 80,
-              child: InkWell(
-                onTap: () {},
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
+            return InkWell(
+              onTap: () {},
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Badge.count(
+                    count: controller.indexGrids[i]['count'],
+                    isLabelVisible: controller.indexGrids[i]['count'] > 0,
+                    child: Container(
                       alignment: Alignment.center,
                       width: 45,
                       height: 45,
                       child: Image.network(
-                        StaticData.indexGrids[i]['img'],
+                        controller.indexGrids[i]['img'],
                         fit: BoxFit.fitHeight,
                       ),
                     ),
-                    Text(
-                      StaticData.indexGrids[i]['name'],
-                      style: const TextStyle(fontSize: 13),
-                    )
-                  ],
-                ),
+                  ),
+                  Text(
+                    controller.indexGrids[i]['name'],
+                    style: const TextStyle(fontSize: 13),
+                  )
+                ],
               ),
             );
           }),
@@ -243,6 +255,10 @@ class ShopView extends GetView<ShopController> {
             },
           ),
           BusiCardWdiget(context),
+          DefaultOrderCardWidget(context),
+          PointOrderCardWidget(context),
+          ApptCardWidget(context),
+          BusiCardWdiget(context),
         ],
       ),
     );
@@ -250,20 +266,248 @@ class ShopView extends GetView<ShopController> {
 
   //商机单卡片
   Widget BusiCardWdiget(context) {
-    return Column(
-      children: [
-        BrnButtonPanel(
-          horizontalPadding: 0,
-          mainButtonName: '主按钮',
-          mainButtonOnTap: () {
-            BrnToast.show('主按钮点击', context);
-          },
-          secondaryButtonNameList: const ['次按钮1', '次按钮2'],
-          secondaryButtonOnTap: (index) {
-            BrnToast.show('第$index个次按钮点击了', context);
-          },
-        ),
-      ],
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+      ),
+      child: Column(
+        children: [
+          ListTile(
+            title: const Text('电子询货单-玖品信息发布平台玖品信息发布平台玖品信息发布平台-JP2024053199'),
+            subtitle: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('询货总数：30'),
+                Text('发布时间：2021-09-25 12:00'),
+              ],
+            ),
+            titleTextStyle: const TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black),
+            subtitleTextStyle: const TextStyle(color: Colors.black54),
+            contentPadding: const EdgeInsets.all(10),
+            onTap: () {
+              BrnToast.show('商机单 is clicked', context);
+            },
+          ),
+          BrnButtonPanel(
+            horizontalPadding: 10,
+            mainButtonName: '报价',
+            mainButtonOnTap: () {
+              BrnToast.show('报价', context);
+            },
+            secondaryButtonNameList: const ['联系'],
+            secondaryButtonOnTap: (index) {
+              BrnToast.show('第$index个次按钮点击了', context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  //订单卡片
+  Widget DefaultOrderCardWidget(context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+      ),
+      child: Column(
+        children: [
+          ListTile(
+            leading: Image.network(
+              'https://jpf.jpwanrun.com/upload/file/2024-03-25/WCXWLmpmgG.jpg',
+              width: 50,
+              height: 50,
+            ),
+            title: const Text('新人专享.新版规格商品高端定制水杯青花瓷国瓷套装定制色'),
+            subtitle: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('10寸黑色套装'),
+                SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '￥19',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    Text('x1')
+                  ],
+                ),
+              ],
+            ),
+            titleTextStyle: const TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black),
+            subtitleTextStyle: const TextStyle(color: Colors.black54),
+            contentPadding: const EdgeInsets.all(10),
+            onTap: () {
+              BrnToast.show('订单 is clicked', context);
+            },
+          ),
+          ListTile(
+            leading: Image.network(
+              'https://jpf.jpwanrun.com/upload/file/2024-03-25/WCXWLmpmgG.jpg',
+              width: 50,
+              height: 50,
+            ),
+            title: const Text('新人专享.新版规格商品高端定制水杯青花瓷国瓷套装定制色'),
+            subtitle: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('10寸黑色套装'),
+                SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '￥19',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    Text('x1')
+                  ],
+                ),
+              ],
+            ),
+            titleTextStyle: const TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black),
+            subtitleTextStyle: const TextStyle(color: Colors.black54),
+            contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+            onTap: () {
+              BrnToast.show('订单 is clicked', context);
+            },
+          ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+            margin: const EdgeInsets.only(bottom: 10),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('总金额'),
+                Text('￥38', style: TextStyle(color: Colors.red))
+              ],
+            ),
+          ),
+          BrnButtonPanel(
+            horizontalPadding: 10,
+            mainButtonName: '发货',
+            mainButtonOnTap: () {
+              BrnToast.show('发货', context);
+            },
+            secondaryButtonNameList: const ['联系', '查看买家'],
+            secondaryButtonOnTap: (index) {
+              BrnToast.show('第$index个次按钮点击了', context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  //积分订单卡片
+  Widget PointOrderCardWidget(context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+      ),
+      child: Column(
+        children: [
+          ListTile(
+            leading: Image.network(
+              'http://jpf.jpwanrun.com/upload/image/2022-06-23/1655965618803191655965618655160.jpg',
+              width: 50,
+              height: 50,
+            ),
+            title: const Text('积分兑换.漂亮商务水杯'),
+            subtitle: const Column(
+              children: [
+                SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '19积分',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    Text('x1')
+                  ],
+                )
+              ],
+            ),
+            titleTextStyle: const TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black),
+            subtitleTextStyle: const TextStyle(color: Colors.black54),
+            contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+            onTap: () {
+              BrnToast.show('积分订单 is clicked', context);
+            },
+          ),
+          BrnButtonPanel(
+            horizontalPadding: 10,
+            mainButtonName: '发货/备货',
+            mainButtonOnTap: () {
+              BrnToast.show('发货/备货', context);
+            },
+            secondaryButtonNameList: const ['联系'],
+            secondaryButtonOnTap: (index) {
+              BrnToast.show('第$index个次按钮点击了', context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  //预约单卡片组件
+  Widget ApptCardWidget(context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+      ),
+      child: Column(
+        children: [
+          ListTile(
+            title: const Text('预约人郭先生-预约目的采购'),
+            subtitle: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('预约时间：2021-09-25 13时~15时'),
+                Text('备注：采购一批商品到店里先看看'),
+              ],
+            ),
+            titleTextStyle: const TextStyle(
+                fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black),
+            subtitleTextStyle: const TextStyle(color: Colors.black54),
+            contentPadding: const EdgeInsets.all(10),
+            onTap: () {
+              BrnToast.show('预约单 is clicked', context);
+            },
+          ),
+          BrnButtonPanel(
+            horizontalPadding: 10,
+            mainButtonName: '已到店',
+            mainButtonOnTap: () {
+              BrnToast.show('已到店', context);
+            },
+            secondaryButtonNameList: const ['谢绝预约'],
+            secondaryButtonOnTap: (index) {
+              BrnToast.show('第$index个次按钮点击了', context);
+            },
+          ),
+        ],
+      ),
     );
   }
 

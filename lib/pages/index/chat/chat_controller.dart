@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 class ChatController extends GetxController {
   final RxInt index = 0.obs;
+  final RxString loadStatus = 'empty'.obs;
 
   ScrollController scrollController = ScrollController();
   @override

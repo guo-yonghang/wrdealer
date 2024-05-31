@@ -32,31 +32,37 @@ class StaticData {
       "name": "商机",
       "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "path": "1",
+      "count": 6
     },
     {
       "name": "订单",
       "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "path": "1",
+      "count": 12
     },
     {
       "name": "预约",
       "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "path": "1",
+      "count": 3
     },
     {
       "name": "数据",
       "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "path": "1",
+      "count": 0
     },
     {
       "name": "商品",
       "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "path": "1",
+      "count": 0
     },
     {
       "name": "活动",
       "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "path": "1",
+      "count": 1
     },
   ];
 }
