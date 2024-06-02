@@ -20,7 +20,7 @@ class ShopView extends GetView<ShopController> {
                 width: 36,
                 child: ClipOval(
                   child: Image.network(
-                    'https://jpf.jpwanrun.com/upload/file/2023-09-25/7bczzgtyzw.jpg',
+                    'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
                     width: 36,
                     height: 36,
                     fit: BoxFit.cover,
@@ -222,7 +222,7 @@ class ShopView extends GetView<ShopController> {
                       height: 45,
                       child: Image.network(
                         controller.indexGrids[i]['img'],
-                        fit: BoxFit.fitHeight,
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                   ),
@@ -321,9 +321,10 @@ class ShopView extends GetView<ShopController> {
         children: [
           ListTile(
             leading: Image.network(
-              'https://jpf.jpwanrun.com/upload/file/2024-03-25/WCXWLmpmgG.jpg',
+              'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
               width: 50,
               height: 50,
+              fit: BoxFit.cover,
             ),
             title: const Text('新人专享.新版规格商品高端定制水杯青花瓷国瓷套装定制色'),
             subtitle: const Column(
@@ -353,9 +354,10 @@ class ShopView extends GetView<ShopController> {
           ),
           ListTile(
             leading: Image.network(
-              'https://jpf.jpwanrun.com/upload/file/2024-03-25/WCXWLmpmgG.jpg',
+              'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
               width: 50,
               height: 50,
+              fit: BoxFit.cover,
             ),
             title: const Text('新人专享.新版规格商品高端定制水杯青花瓷国瓷套装定制色'),
             subtitle: const Column(
@@ -423,9 +425,10 @@ class ShopView extends GetView<ShopController> {
         children: [
           ListTile(
             leading: Image.network(
-              'http://jpf.jpwanrun.com/upload/image/2022-06-23/1655965618803191655965618655160.jpg',
+              'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
               width: 50,
               height: 50,
+              fit: BoxFit.cover,
             ),
             title: const Text('积分兑换.漂亮商务水杯'),
             subtitle: const Column(

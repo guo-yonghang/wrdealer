@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:bruno/bruno.dart';
 
 List list = [
   {
@@ -95,11 +96,23 @@ List list = [
 ];
 
 class NewsController extends GetxController {
+  final tabIndex = 0.obs;
+  final tabLIst = [
+    {
+      "title": "万润国际",
+      "badge": 0,
+    },
+    {
+      "title": "行业动态",
+      "badge": 2,
+    }
+  ].obs;
   final RxList newsList = [].obs;
   final RxBool completed = false.obs;
   int page = 1;
   bool apiloading = false;
   ScrollController scrollController = ScrollController();
+
   @override
   void onInit() {
     super.onInit();
