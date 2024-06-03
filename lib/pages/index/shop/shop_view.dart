@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bruno/bruno.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'shop_controller.dart';
 import '../../../service/keepAliveWrapper.dart';
 
@@ -31,7 +29,7 @@ class ShopView extends GetView<ShopController> {
               const Expanded(
                 flex: 1,
                 child: Text(
-                  '上海有一家专业公司总经小学网最高的专业人员同学',
+                  '上海逆境生长的店铺-主要经营玻璃制品厨房大件用品',
                   style: TextStyle(fontSize: 18, color: Colors.black87),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

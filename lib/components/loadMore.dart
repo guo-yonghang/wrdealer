@@ -19,7 +19,7 @@ class LoadMore extends StatelessWidget {
     this.initText = '',
     this.loadText = "正在加载中...",
     this.finalText = '没有更多数据了',
-    this.emptyText = '没有消息',
+    this.emptyText = '没有数据',
     this.emptyType = 'list',
     this.emptySize = 180,
     this.initTextStyle = const TextStyle(color: Colors.black54),
@@ -53,16 +53,10 @@ class LoadMore extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 15),
             const CircularProgressIndicator(),
-            initText != ''
-                ? Container(
-                    margin: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      initText,
-                      style: initTextStyle,
-                    ),
-                  )
-                : Container()
+            const SizedBox(height: 15),
+            initText != '' ? Text(initText, style: initTextStyle) : Container()
           ],
         ),
       );
@@ -70,6 +64,7 @@ class LoadMore extends StatelessWidget {
     if (status == 'loading') {
       return SizedBox(
         width: double.infinity,
+        height: 40,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -93,7 +88,7 @@ class LoadMore extends StatelessWidget {
     }
     if (status == 'final') {
       return Container(
-        height: 44,
+        height: 40,
         alignment: Alignment.center,
         child: Text(finalText, style: finalTextStyle),
       );
