@@ -29,11 +29,16 @@ class ShopView extends GetView<ShopController> {
               const Expanded(
                 flex: 1,
                 child: Text(
-                  '上海逆境生长的店铺-主要经营玻璃制品厨房大件用品',
+                  '逆境生长的店铺',
                   style: TextStyle(fontSize: 18, color: Colors.black87),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+              ),
+              const SizedBox(width: 10),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.qr_code_outlined),
               )
             ],
           ),
@@ -269,7 +274,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
       ),
       child: Column(
         children: [
@@ -313,7 +318,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
       ),
       child: Column(
         children: [
@@ -417,7 +422,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
       ),
       child: Column(
         children: [
@@ -475,7 +480,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x404e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
       ),
       child: Column(
         children: [
