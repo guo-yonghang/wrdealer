@@ -72,8 +72,7 @@ class StaticData {
       "desc": "",
       "anthor": "腾讯新闻一线",
       "time": "昨天",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/909dd02b-3ab6-4c94-92f0-d81daba88a9f.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 100,
     },
     {
@@ -81,8 +80,7 @@ class StaticData {
       "desc": "",
       "anthor": "IQ测试-灵知妙享",
       "time": "10小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/0ae032b9-e56a-4868-8f6a-468e44dc8582.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 20,
     },
     {
@@ -90,8 +88,7 @@ class StaticData {
       "desc": "",
       "anthor": "车圈能见度",
       "time": "22小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/ae52cf3a-4f38-46e2-8b2f-11a295b2eaea.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 1,
     },
     {
@@ -99,8 +96,7 @@ class StaticData {
       "desc": "",
       "anthor": "融中财经",
       "time": "3小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/c75d0033-5bde-408a-93f0-82297cd4f6e5.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 16,
     },
     {
@@ -108,8 +104,7 @@ class StaticData {
       "desc": "",
       "anthor": "阿喵汽车",
       "time": "6小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/05b83b3a-1513-4151-b9eb-04a5a79b2d68.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 4,
     },
     {
@@ -117,8 +112,7 @@ class StaticData {
       "desc": "",
       "anthor": "腾讯新闻一线",
       "time": "昨天",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/909dd02b-3ab6-4c94-92f0-d81daba88a9f.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 100,
     },
     {
@@ -126,8 +120,7 @@ class StaticData {
       "desc": "",
       "anthor": "IQ测试-灵知妙享",
       "time": "10小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/0ae032b9-e56a-4868-8f6a-468e44dc8582.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 20,
     },
     {
@@ -135,8 +128,7 @@ class StaticData {
       "desc": "",
       "anthor": "车圈能见度",
       "time": "22小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/ae52cf3a-4f38-46e2-8b2f-11a295b2eaea.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 1,
     },
     {
@@ -144,8 +136,7 @@ class StaticData {
       "desc": "",
       "anthor": "融中财经",
       "time": "3小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/c75d0033-5bde-408a-93f0-82297cd4f6e5.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 16,
     },
     {
@@ -153,8 +144,7 @@ class StaticData {
       "desc": "",
       "anthor": "阿喵汽车",
       "time": "6小时前",
-      "img":
-          "http://jpf.jpwanrun.com/upload/wrgj/news/05b83b3a-1513-4151-b9eb-04a5a79b2d68.jpg",
+      "img": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
       "read": 4,
     },
   ];

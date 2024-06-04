@@ -7,8 +7,8 @@ import './admin/admin_view.dart';
 // import '../../service/storage.dart';
 
 class IndexController extends GetxController {
-  final RxInt tabIndex = 0.obs;
-  PageController pageController = PageController(initialPage: 0);
+  final RxInt tabIndex = 3.obs;
+  PageController pageController = PageController(initialPage: 3);
   final List<Widget> tabbars = [
     const ShopView(),
     const NewsView(),

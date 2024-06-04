@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:bruno/bruno.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import './admin_controller.dart';
 
 class AdminView extends GetView<AdminController> {
@@ -9,39 +10,62 @@ class AdminView extends GetView<AdminController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('我的', style: TextStyle(fontSize: 18)),
+        title: const Text(
+          '我的',
+          style: TextStyle(fontSize: 18, color: Colors.white),
+        ),
         centerTitle: true,
+        backgroundColor: Get.theme.primaryColor,
       ),
       body: ListView(
         children: [
-          ListTile(
-            onTap: () {},
-            contentPadding: const EdgeInsets.fromLTRB(16, 5, 0, 5),
-            leading: const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg"),
-            ),
-            title: const Text(
-              '逆境生长的店铺',
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 18),
-            ),
-            subtitle: const Text(
-              '19512111111',
-              style: TextStyle(fontSize: 12, color: Colors.black54),
-            ),
-            trailing: BrnTagCustom(
-              tagText: '已认证',
-              backgroundColor: Get.theme.primaryColor,
-              textPadding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
-              tagBorderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                topLeft: Radius.circular(10),
+          Container(
+            //渐变linear-gradient(0deg, #709ae0, #465cff)
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xff4e75fd),
+                  // Color(0xff465cff),
+                  // Color(0xff6297db),
+                  Color(0xff1dc3ff),
+                ],
               ),
+            ),
+            child: ListTile(
+              onTap: () {},
+              contentPadding: const EdgeInsets.fromLTRB(16, 5, 10, 5),
+              leading: const CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg"),
+              ),
+              title: const Text(
+                '逆境生长的店铺',
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+              subtitle: const Text(
+                '19512111111',
+                style: TextStyle(fontSize: 12, color: Colors.white70),
+              ),
+              trailing: const Icon(
+                Icons.keyboard_arrow_right,
+                color: Colors.white,
+              ),
+              // trailing: BrnTagCustom(
+              //   tagText: '已认证',
+              //   backgroundColor: Color(0xffdda765),
+              //   textPadding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
+              //   tagBorderRadius: const BorderRadius.only(
+              //     bottomLeft: Radius.circular(10),
+              //     topLeft: Radius.circular(10),
+              //   ),
+              // ),
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(10, 0, 10, 16),
+            padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
             child: Container(
               height: 60,
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),

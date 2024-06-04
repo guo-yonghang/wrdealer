@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import './middlewares.dart';
-
 import '../pages/index/index_view.dart';
 import '../pages/index/index_binding.dart';
 import '../pages/login/login_view.dart';

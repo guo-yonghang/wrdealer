@@ -41,7 +41,7 @@ class NewsView extends GetView<NewsController> {
                     return LoadMore(status: controller.loadStatus[entry.key]);
                   }
                   return ListTile(
-                    title: Text(item[index]['title']),
+                    title: Text('$index. ${item[index]['title']}'),
                     subtitle: Column(
                       children: [
                         const SizedBox(height: 10),
