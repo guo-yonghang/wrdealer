@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../../../common/staticData.dart';
+import '../../../store/global.dart';
 
 class ShopController extends GetxController {
   final RxInt index = 0.obs;
@@ -28,6 +29,8 @@ class ShopController extends GetxController {
       "name": "账薄已开通",
     },
   ].obs;
+
+  final globalStore = Get.put(GlobalController());
 
   @override
   void onInit() {

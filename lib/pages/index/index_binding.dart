@@ -4,8 +4,7 @@ import './shop/shop_controller.dart';
 import './news/news_controller.dart';
 import './chat/chat_controller.dart';
 import './admin/admin_controller.dart';
-// import '../../store/chat.dart';
-// import '../../store/user.dart';
+import '../../store/global.dart';
 
 class IndexBinding extends Bindings {
   @override
@@ -15,7 +14,6 @@ class IndexBinding extends Bindings {
     Get.lazyPut<NewsController>(() => NewsController());
     Get.lazyPut<ChatController>(() => ChatController());
     Get.lazyPut<AdminController>(() => AdminController());
-    // Get.lazyPut<ChatStoreController>(() => ChatStoreController());
-    // Get.lazyPut<UserStoreController>(() => UserStoreController());
+    Get.lazyPut<GlobalController>(() => GlobalController());
   }
 }

@@ -20,15 +20,12 @@ class AdminView extends GetView<AdminController> {
       body: ListView(
         children: [
           Container(
-            //渐变linear-gradient(0deg, #709ae0, #465cff)
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
                   Color(0xff4e75fd),
-                  // Color(0xff465cff),
-                  // Color(0xff6297db),
                   Color(0xff1dc3ff),
                 ],
               ),
@@ -45,23 +42,20 @@ class AdminView extends GetView<AdminController> {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
-              subtitle: const Text(
-                '19512111111',
-                style: TextStyle(fontSize: 12, color: Colors.white70),
+              subtitle: const Row(
+                children: [
+                  Icon(Icons.verified_user, color: Color(0xfff0e68c), size: 18),
+                  SizedBox(width: 2),
+                  Text(
+                    '19512111111',
+                    style: TextStyle(fontSize: 12, color: Colors.white70),
+                  ),
+                ],
               ),
               trailing: const Icon(
                 Icons.keyboard_arrow_right,
                 color: Colors.white,
               ),
-              // trailing: BrnTagCustom(
-              //   tagText: '已认证',
-              //   backgroundColor: Color(0xffdda765),
-              //   textPadding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
-              //   tagBorderRadius: const BorderRadius.only(
-              //     bottomLeft: Radius.circular(10),
-              //     topLeft: Radius.circular(10),
-              //   ),
-              // ),
             ),
           ),
           Container(

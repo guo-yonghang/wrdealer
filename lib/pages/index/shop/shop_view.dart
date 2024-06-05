@@ -18,7 +18,7 @@ class ShopView extends GetView<ShopController> {
                 width: 36,
                 child: ClipOval(
                   child: Image.network(
-                    'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
+                    controller.globalStore.user['img'],
                     width: 36,
                     height: 36,
                     fit: BoxFit.cover,
@@ -26,11 +26,11 @@ class ShopView extends GetView<ShopController> {
                 ),
               ),
               const SizedBox(width: 10),
-              const Expanded(
+              Expanded(
                 flex: 1,
                 child: Text(
-                  '逆境生长的店铺',
-                  style: TextStyle(fontSize: 18, color: Colors.black87),
+                  '${controller.globalStore.user['name']}',
+                  style: const TextStyle(fontSize: 18, color: Colors.black87),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

@@ -45,7 +45,7 @@ class ChatController extends GetxController {
       list.clear();
     }
     await Future.delayed(const Duration(seconds: 1));
-    List newList = List.generate(10, (index) {
+    List newList = List.generate(15, (index) {
       return {
         "avatar": "https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg",
         "name": "User Friend $index",
