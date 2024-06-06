@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'infomation_controller.dart';
+import './info_controller.dart';
 
-class MyselfInfomationView extends GetView<MyselfInfomationController> {
-  const MyselfInfomationView({super.key});
+class MyselfInfoView extends GetView<MyselfInfoController> {
+  const MyselfInfoView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

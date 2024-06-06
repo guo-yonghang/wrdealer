@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class MyselfInfomationController extends GetxController {
+class MyselfInfoController extends GetxController {
   @override
   void onInit() {
     super.onInit();

@@ -49,9 +49,9 @@ class ShopView extends GetView<ShopController> {
             Column(
               children: [
                 IncomeWidget(),
-                Container(height: 10, color: const Color(0xfff8f8fb)),
+                Container(height: 2, color: const Color(0xfff8f8fb)),
                 GridUtilWidget(),
-                Container(height: 10, color: const Color(0xfff8f8fb)),
+                Container(height: 2, color: const Color(0xfff8f8fb)),
                 TodosWidget(context),
               ],
             )
@@ -65,7 +65,7 @@ class ShopView extends GetView<ShopController> {
   Widget IncomeWidget() {
     return Container(
       margin: const EdgeInsets.only(top: 10, bottom: 10),
-      width: 360,
+      width: 350,
       height: 180,
       color: Get.theme.primaryColor,
       child: Stack(
@@ -96,7 +96,7 @@ class ShopView extends GetView<ShopController> {
                       InkWell(
                         onTap: () {},
                         child: const SizedBox(
-                          width: 115,
+                          width: 110,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -140,7 +140,7 @@ class ShopView extends GetView<ShopController> {
                       InkWell(
                         onTap: () {},
                         child: const SizedBox(
-                          width: 115,
+                          width: 110,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -200,8 +200,8 @@ class ShopView extends GetView<ShopController> {
   //常用工具
   Widget GridUtilWidget() {
     return SizedBox(
-      width: 360,
-      height: 360 / 2,
+      width: 350,
+      height: 350 / 2,
       child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemCount: controller.indexGrids.length,
@@ -243,19 +243,22 @@ class ShopView extends GetView<ShopController> {
   //待办事项
   Widget TodosWidget(context) {
     return SizedBox(
-      width: 360,
+      width: 350,
       child: Column(
         children: [
-          BrnActionCardTitle(
-            title: '待办事项',
-            subTitle: '10',
-            accessoryText: '查看更多',
-            themeData: BrnCardTitleConfig(
-              accessoryTextStyle: BrnTextStyle(fontSize: 12),
+          Padding(
+            padding: const EdgeInsets.only(left: 5, right: 5),
+            child: BrnActionCardTitle(
+              title: '待办事项',
+              subTitle: '10',
+              accessoryText: '查看更多',
+              themeData: BrnCardTitleConfig(
+                accessoryTextStyle: BrnTextStyle(fontSize: 12),
+              ),
+              onTap: () {
+                BrnToast.show('BrnActionCardTitle is clicked', context);
+              },
             ),
-            onTap: () {
-              BrnToast.show('BrnActionCardTitle is clicked', context);
-            },
           ),
           BusiCardWdiget(context),
           DefaultOrderCardWidget(context),

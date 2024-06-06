@@ -6,8 +6,8 @@ import '../pages/login/login_view.dart';
 import '../pages/login/login_binding.dart';
 
 //我的模块
-import '../pages/myself/infomation/infomation_view.dart';
-import '../pages/myself/infomation/infomation_binding.dart';
+import '../pages/myself/info/info_view.dart';
+import '../pages/myself/info/info_binding.dart';
 import '../pages/myself/qrcode/qrcode_view.dart';
 import '../pages/myself/qrcode/qrcode_binding.dart';
 
@@ -32,8 +32,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MyselfInfomation,
-      page: () => const MyselfInfomationView(),
-      binding: MyselfInfomationBinding(),
+      page: () => const MyselfInfoView(),
+      binding: MyselfInfoBinding(),
     ),
     GetPage(
       name: _Paths.MyselfQrcode,
