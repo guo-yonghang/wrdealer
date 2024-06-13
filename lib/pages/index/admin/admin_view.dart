@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:bruno/bruno.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import './admin_controller.dart';
 
 class AdminView extends GetView<AdminController> {
@@ -31,7 +29,9 @@ class AdminView extends GetView<AdminController> {
               ),
             ),
             child: ListTile(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed('/myself-info');
+              },
               contentPadding: const EdgeInsets.fromLTRB(16, 5, 10, 5),
               leading: const CircleAvatar(
                 backgroundImage: NetworkImage(

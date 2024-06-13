@@ -31,7 +31,7 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.MyselfInfomation,
+      name: _Paths.MyselfInfo,
       page: () => const MyselfInfoView(),
       binding: MyselfInfoBinding(),
     ),

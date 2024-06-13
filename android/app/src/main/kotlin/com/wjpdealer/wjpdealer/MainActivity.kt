@@ -1,4 +1,4 @@
-package com.wjpdealer.wjpdealer
+package com.wjpdealer
 
 import io.flutter.embedding.android.FlutterActivity
 

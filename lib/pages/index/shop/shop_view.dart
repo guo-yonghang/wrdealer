@@ -49,9 +49,9 @@ class ShopView extends GetView<ShopController> {
             Column(
               children: [
                 IncomeWidget(),
-                Container(height: 2, color: const Color(0xfff8f8fb)),
+                // Container(height: 2, color: const Color(0xfff8f8fb)),
                 GridUtilWidget(),
-                Container(height: 2, color: const Color(0xfff8f8fb)),
+                // Container(height: 2, color: const Color(0xfff8f8fb)),
                 TodosWidget(context),
               ],
             )
@@ -277,7 +277,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0xffeeeeee))),
       ),
       child: Column(
         children: [
@@ -321,7 +321,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0xffeeeeee))),
       ),
       child: Column(
         children: [
@@ -425,7 +425,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0xffeeeeee))),
       ),
       child: Column(
         children: [
@@ -483,7 +483,7 @@ class ShopView extends GetView<ShopController> {
       padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: Color(0x204e75fd))),
+        border: Border(bottom: BorderSide(color: Color(0xffeeeeee))),
       ),
       child: Column(
         children: [
